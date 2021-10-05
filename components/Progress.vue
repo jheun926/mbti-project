@@ -25,6 +25,7 @@ export default {
 }
 .gauge {
   background: cornflowerblue;
-  width: 10px;
+  height: 10px;
+  margin-top: 10px;
 }
 </style>
