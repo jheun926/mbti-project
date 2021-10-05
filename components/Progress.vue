@@ -1,7 +1,30 @@
 <template>
-    <div></div>
+  <div class="progressbar">
+    <div class="page">{{ page }} / {{ maxLength }}</div>
+    <div class="gauge" :style="{ width: `${(page / maxLength) * 100}%` }"></div>
+  </div>
 </template>
 <script>
-export default {};
+export default {
+  computed: {
+    page() {
+      return this.$store.state.page;
+    },
+    maxLength() {
+      return this.$store.state.questions.length;
+    }
+  }
+};
 </script>
-<style></style>
+<style scoped>
+.progressbar {
+  margin: 20px 0;
+}
+.page {
+  font-size: 14px;
+}
+.gauge {
+  background: cornflowerblue;
+  width: 10px;
+}
+</style>
